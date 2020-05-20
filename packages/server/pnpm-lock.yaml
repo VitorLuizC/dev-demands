@@ -1,0 +1,12 @@
+devDependencies:
+  esm: 3.2.25
+lockfileVersion: 5.1
+packages:
+  /esm/3.2.25:
+    dev: true
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-U1suiZ2oDVWv4zPO56S0NcR5QriEahGtdN2OR6FiOG4WJvcjBVFB0qI4+eKoWFH483PKGuLuu6V8Z4T5g63UVA==
+specifiers:
+  esm: ^3.2.25
