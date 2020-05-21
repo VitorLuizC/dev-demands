@@ -17,8 +17,8 @@ export default function SignIn() {
       }),
     })
       .then((response) => response.json())
-      .then(() => {
-        console.log('Success!');
+      .then((data) => {
+        console.log('Success!', data);
       });
   };
 
@@ -35,7 +35,7 @@ export default function SignIn() {
           type="email"
           value={email}
           onChange={handleEmailChange}
-          inputmode="email"
+          inputMode="email"
           autoComplete="username"
         />
       </fieldset>
