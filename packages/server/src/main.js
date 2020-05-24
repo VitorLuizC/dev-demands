@@ -1,32 +1,14 @@
 import express from 'express';
 
-import { ApolloServer, gql } from 'apollo-server-express';
+import { ApolloServer } from 'apollo-server-express';
+import typeDefs from './graphql/typeDefs';
+import resolvers from './graphql/resolvers';
 
 const app = express();
 
 const server = new ApolloServer({
-  typeDefs: gql`
-    type Client {
-      id: ID!
-      name: String!
-    }
-
-    type Demand {
-      id: ID!
-      name: String!
-      client: Client!
-      deadline: String
-    }
-
-    type Query {
-      demands: [Demand]!
-    }
-  `,
-  resolvers: {
-    Query: {
-      demands: () => [],
-    },
-  },
+  typeDefs,
+  resolvers,
 });
 
 server.applyMiddleware({
@@ -34,22 +16,8 @@ server.applyMiddleware({
   cors: {
     origin: 'http://localhost:3000',
   },
+  bodyParserConfig: true,
 });
-
-// server.get('/status', (_, response) => {
-//   response.send({
-//     status: 'Okay',
-//   });
-// });
-
-// server
-//   .options('/authenticate', enableCors)
-//   .post('/authenticate', enableCors, express.json(), (request, response) => {
-//     console.log('E-Mail', request.body.email, 'Senha', request.body.password);
-//     response.send({
-//       Okay: true,
-//     });
-//   });
 
 const PORT = process.env.PORT ? parseInt(process.env.PORT) : 8000;
 const HOSTNAME = process.env.HOSTNAME || '127.0.0.1';
