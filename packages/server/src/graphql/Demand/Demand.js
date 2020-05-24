@@ -1,7 +1,7 @@
 import { gql } from 'apollo-server-express';
 
 export const typeDefs = gql`
-  type Demand {
+  type Demand implements Node {
     id: ID!
     name: String!
     client: Client!
@@ -15,6 +15,9 @@ export const typeDefs = gql`
 
 export const resolvers = {
   Query: {
-    demands: () => [],
+    demands: async () => {
+      await new Promise((resolve) => setTimeout(resolve, Math.random() * 2000));
+      return [];
+    },
   },
 };
