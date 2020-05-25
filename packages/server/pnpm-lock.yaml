@@ -2,6 +2,7 @@ dependencies:
   apollo-server-express: 2.13.1
   cors: 2.8.5
   express: 4.17.1
+  uuid: 8.1.0
 devDependencies:
   esm: 3.2.25
   nodemon: 2.0.4
@@ -2024,6 +2025,11 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
+  /uuid/8.1.0:
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha512-CI18flHDznR0lq54xBycOVmphdCYnQLKn8abKn7PXUiKUGdEd+/l9LWNJmugXel4hXq7S+RMNl34ecyC9TntWg==
   /vary/1.1.2:
     dev: false
     engines:
@@ -2090,3 +2096,4 @@ specifiers:
   esm: ^3.2.25
   express: ^4.17.1
   nodemon: ^2.0.4
+  uuid: ^8.1.0

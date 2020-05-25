@@ -10,6 +10,10 @@ const typeDefs = gql`
     _root: String
   }
 
+  type Mutation {
+    _root: String
+  }
+
   ${nodeTypeDefs}
   ${listTypeDefs}
   ${clientTypeDefs}
