@@ -2,6 +2,10 @@ dependencies:
   '@testing-library/jest-dom': 4.2.4
   '@testing-library/react': 9.5.0_react-dom@16.13.1+react@16.13.1
   '@testing-library/user-event': 7.2.1
+  apollo-link: 1.2.14
+  apollo-link-context: 1.0.20
+  apollo-link-error: 1.1.13
+  apollo-link-http: 1.5.17
   react: 16.13.1
   react-dom: 16.13.1_react@16.13.1
   react-router-dom: 5.2.0_react@16.13.1
@@ -1909,6 +1913,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-w0U0pD4EhlnvRyeJzBqaVSJAo9w/ce7/WPogeXLzGkO6hzhr4GnQIZ4W4uUt5b9ooAaXPtnXlj0gzsXEOUNYMg==
+  /@wry/equality/0.1.11:
+    dependencies:
+      tslib: 1.13.0
+    dev: false
+    resolution:
+      integrity: sha512-mwEVBDUVODlsQQ5dfuLUS5/Tf7jqUKyhKYHmVi4fPB6bDMOfWvUPJmKgS1Z7Za/sOI3vzWt4+O7yCiL/70MogA==
   /@xtuc/ieee754/1.2.0:
     dev: false
     resolution:
@@ -2116,6 +2126,63 @@ packages:
       node: '>= 8'
     resolution:
       integrity: sha512-mM8522psRCqzV+6LhomX5wgp25YVibjh8Wj23I5RPkPppSVSjyKD2A2mBJmWGa+KN7f2D6LNh9jkBCeyLktzjg==
+  /apollo-link-context/1.0.20:
+    dependencies:
+      apollo-link: 1.2.14
+      tslib: 1.13.0
+    dev: false
+    resolution:
+      integrity: sha512-MLLPYvhzNb8AglNsk2NcL9AvhO/Vc9hn2ZZuegbhRHGet3oGr0YH9s30NS9+ieoM0sGT11p7oZ6oAILM/kiRBA==
+  /apollo-link-error/1.1.13:
+    dependencies:
+      apollo-link: 1.2.14
+      apollo-link-http-common: 0.2.16
+      tslib: 1.13.0
+    dev: false
+    resolution:
+      integrity: sha512-jAZOOahJU6bwSqb2ZyskEK1XdgUY9nkmeclCrW7Gddh1uasHVqmoYc4CKdb0/H0Y1J9lvaXKle2Wsw/Zx1AyUg==
+  /apollo-link-http-common/0.2.16:
+    dependencies:
+      apollo-link: 1.2.14
+      ts-invariant: 0.4.4
+      tslib: 1.13.0
+    dev: false
+    peerDependencies:
+      graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
+    resolution:
+      integrity: sha512-2tIhOIrnaF4UbQHf7kjeQA/EmSorB7+HyJIIrUjJOKBgnXwuexi8aMecRlqTIDWcyVXCeqLhUnztMa6bOH/jTg==
+  /apollo-link-http/1.5.17:
+    dependencies:
+      apollo-link: 1.2.14
+      apollo-link-http-common: 0.2.16
+      tslib: 1.13.0
+    dev: false
+    peerDependencies:
+      graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
+    resolution:
+      integrity: sha512-uWcqAotbwDEU/9+Dm9e1/clO7hTB2kQ/94JYcGouBVLjoKmTeJTUPQKcJGpPwUjZcSqgYicbFqQSoJIW0yrFvg==
+  /apollo-link/1.2.14:
+    dependencies:
+      apollo-utilities: 1.3.4
+      ts-invariant: 0.4.4
+      tslib: 1.13.0
+      zen-observable-ts: 0.8.21
+    dev: false
+    peerDependencies:
+      graphql: ^0.11.3 || ^0.12.3 || ^0.13.0 || ^14.0.0 || ^15.0.0
+    resolution:
+      integrity: sha512-p67CMEFP7kOG1JZ0ZkYZwRDa369w5PIjtMjvrQd/HnIV8FRsHRqLqK+oAZQnFa1DDdZtOtHTi+aMIW6EatC2jg==
+  /apollo-utilities/1.3.4:
+    dependencies:
+      '@wry/equality': 0.1.11
+      fast-json-stable-stringify: 2.1.0
+      ts-invariant: 0.4.4
+      tslib: 1.13.0
+    dev: false
+    peerDependencies:
+      graphql: ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0
+    resolution:
+      integrity: sha512-pk2hiWrCXMAy2fRPwEyhvka+mqwzeP60Jr1tRYi5xru+3ko94HI9o6lK0CT33/w4RDlxWchmdhDCrvdr+pHCig==
   /aproba/1.2.0:
     dev: false
     resolution:
@@ -10734,6 +10801,12 @@ packages:
     dev: false
     resolution:
       integrity: sha1-qLE/1r/SSJUZZ0zN5VujaTtwbQk=
+  /ts-invariant/0.4.4:
+    dependencies:
+      tslib: 1.13.0
+    dev: false
+    resolution:
+      integrity: sha512-uEtWkFM/sdZvRNNDL3Ehu4WVpwaulhwQszV8mrtcdeE8nN00BV9mAmQ88RkrBhFgl9gMgvjJLAQcZbnPXI9mlA==
   /ts-pnp/1.1.6:
     dev: false
     engines:
@@ -11562,10 +11635,25 @@ packages:
     dev: false
     resolution:
       integrity: sha512-AX3Zw5iPruN5ie6xGRIDgqkT+ZhnRlZMLMHAs8tg7nRruy2Nb+i5o9bwghAogtM08q1dpr2LVoS8KSTMYpWXUw==
+  /zen-observable-ts/0.8.21:
+    dependencies:
+      tslib: 1.13.0
+      zen-observable: 0.8.15
+    dev: false
+    resolution:
+      integrity: sha512-Yj3yXweRc8LdRMrCC8nIc4kkjWecPAUVh0TI0OUrWXx6aX790vLcDlWca6I4vsyCGH3LpWxq0dJRcMOFoVqmeg==
+  /zen-observable/0.8.15:
+    dev: false
+    resolution:
+      integrity: sha512-PQ2PC7R9rslx84ndNBZB/Dkv8V8fZEpk83RLgXtYd0fwUgEjseMn1Dgajh2x6S8QbZAFa9p2qVCEuYZNgve0dQ==
 specifiers:
   '@testing-library/jest-dom': ^4.2.4
   '@testing-library/react': ^9.3.2
   '@testing-library/user-event': ^7.1.2
+  apollo-link: ^1.2.14
+  apollo-link-context: ^1.0.20
+  apollo-link-error: ^1.1.13
+  apollo-link-http: ^1.5.17
   react: ^16.13.1
   react-dom: ^16.13.1
   react-router-dom: ^5.2.0
