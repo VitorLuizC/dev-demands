@@ -6,14 +6,16 @@ import { onError } from 'apollo-link-error';
 const loggerLink = new ApolloLink(
   (operation, forward) =>
     new Observable((observer) => {
-      forward(operation).subscribe({
+      const subscription = forward(operation).subscribe({
         next: (result) => {
           console.log('Log', result);
           observer.next(result);
         },
-        error: observer.complete.bind(observer),
+        error: observer.error.bind(observer),
         complete: observer.complete.bind(observer),
       });
+
+      return () => subscription.unsubscribe();
     })
 );
 
